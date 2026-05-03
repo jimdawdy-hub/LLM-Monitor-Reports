@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LLM Cockpit — Session Report 2026-05-03 11:58:43</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  body { font-family: 'Courier New', monospace; background: #050a08; color: #e8f5e8; margin: 0; padding: 32px; }
+  h1   { color: #00e676; letter-spacing: 4px; font-size: 18px; margin-bottom: 4px; }
+  h2   { color: #8fbc8f; letter-spacing: 3px; font-size: 13px; border-bottom: 1px solid #2a5a3a; padding-bottom: 6px; margin-top: 40px; }
+  .meta { color: #8fbc8f; font-size: 12px; margin-bottom: 32px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; }
+  th    { color: #8fbc8f; text-align: left; padding: 6px 12px; border-bottom: 1px solid #2a5a3a; letter-spacing: 1px; }
+  td    { padding: 6px 12px; border-bottom: 1px solid #111; }
+  .chart-wrap { background: #0d1410; border: 1px solid #2a5a3a; padding: 20px; margin-bottom: 24px; }
+  .ai  { background: #0d1410; border: 1px solid #2a5a3a; padding: 24px; line-height: 1.8; }
+  .ai p { margin-bottom: 16px; color: #e8f5e8; }
+  .ai p:last-child { color: #00e676; font-weight: bold; border-top: 1px solid #2a5a3a; padding-top: 16px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h1>✈ LLM COCKPIT MONITOR — SESSION REPORT</h1>
+<div class="meta">Generated: 2026-05-03 11:58:43 &nbsp;|&nbsp; Window: last 24h (from 2026-05-02 11:58) &nbsp;|&nbsp; Analysis: DeepSeek via OpenRouter</div>
+
+<h2>PROVIDER SUMMARY</h2>
+<table>
+  <tr><th>PROVIDER</th><th>STATUS</th><th>PROBES</th><th>SUCCESS</th><th>AVG</th><th>P75</th><th>P95</th><th>MAX</th><th>ERRORS</th></tr>
+  
+        <tr>
+          <td>claude-sonnet-4-6</td>
+          <td style="color:#ffea00;font-weight:bold">YELLOW</td>
+          <td>465</td>
+          <td>98.5%</td>
+          <td>3241ms</td>
+          <td>3127ms</td>
+          <td>7618ms</td>
+          <td>21218ms</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>ChatGPT-5.4</td>
+          <td style="color:#ffea00;font-weight:bold">YELLOW</td>
+          <td>292</td>
+          <td>100.0%</td>
+          <td>1212ms</td>
+          <td>1463ms</td>
+          <td>1960ms</td>
+          <td>3129ms</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>DeepSeek-V4-Flash</td>
+          <td style="color:#ffea00;font-weight:bold">YELLOW</td>
+          <td>476</td>
+          <td>99.6%</td>
+          <td>3707ms</td>
+          <td>4184ms</td>
+          <td>9465ms</td>
+          <td>28247ms</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>MiMo-V2.5-Pro (Orbit)</td>
+          <td style="color:#ffea00;font-weight:bold">YELLOW</td>
+          <td>492</td>
+          <td>94.9%</td>
+          <td>2942ms</td>
+          <td>3647ms</td>
+          <td>5774ms</td>
+          <td>8525ms</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td>claude-sonnet-4-5</td>
+          <td style="color:#ffea00;font-weight:bold">YELLOW</td>
+          <td>307</td>
+          <td>95.8%</td>
+          <td>2009ms</td>
+          <td>2143ms</td>
+          <td>2497ms</td>
+          <td>6511ms</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>NETWORK → ISP</td>
+          <td style="color:#00e676;font-weight:bold">GREEN</td>
+          <td>182</td>
+          <td>100.0%</td>
+          <td>174ms</td>
+          <td>268ms</td>
+          <td>363ms</td>
+          <td>407ms</td>
+          <td>0</td>
+        </tr>
+</table>
+
+<h2>LATENCY OVER TIME (avg ms per 5-min bin)</h2>
+<div class="chart-wrap"><canvas id="latencyChart" height="80"></canvas></div>
+
+<h2>SUCCESS RATE OVER TIME (%)</h2>
+<div class="chart-wrap"><canvas id="successChart" height="80"></canvas></div>
+
+<h2>AI ANALYSIS — DEEPSEEK</h2>
+<div class="ai"><p>The overall session health for the last 24 hours indicates a period of instability across multiple LLM providers, with all providers except the network ISP maintaining a YELLOW status. This suggests elevated latency and intermittent issues, though no provider was completely unavailable. The network ISP remained GREEN, confirming that the underlying network infrastructure was stable and not the source of the observed latency or errors. The session saw 200 status change events, reflecting frequent fluctuations in provider performance, particularly around latency spikes and occasional failures.</p><p>Claude-Sonnet-4-6 demonstrated moderate reliability with a 98.5% success rate across 465 probes, but its latency was notably high, with an average of 3241ms and a maximum of 21218ms. Seven errors were recorded, and the provider experienced multiple status changes, including transitions to RED due to latency spikes up to 10.4x baseline. ChatGPT-5.4 showed strong reliability with a 100% success rate and the lowest average latency (1212ms) among the providers, though it briefly transitioned to YELLOW due to elevated latency. DeepSeek-V4-Flash had a high success rate (99.6%) but exhibited significant latency variability, with a maximum of 28247ms and two errors. MiMo-V2.5-Pro (Orbit) had the lowest success rate (94.9%) and the highest error count (25), indicating reliability issues, though its latency was relatively stable compared to others. Claude-Sonnet-4-5 also showed reliability concerns with a 95.8% success rate and 13 errors, though its latency was lower than its counterpart, Claude-Sonnet-4-6.</p><p>Several patterns emerged during the session. Latency spikes were the primary cause of status changes, particularly for Claude-Sonnet and DeepSeek providers, which frequently transitioned between RED and YELLOW. These spikes often occurred in clusters, suggesting potential systemic issues rather than isolated incidents. ChatGPT-5.4 and the network ISP remained the most stable, with ChatGPT briefly transitioning to YELLOW only once. Comparing providers using the same network path, ChatGPT-5.4 outperformed others in both latency and reliability, while Claude-Sonnet and DeepSeek struggled with latency variability and intermittent failures. MiMo-V2.5-Pro (Orbit) had the highest error rate, indicating potential issues with its implementation or backend infrastructure.</p><p>Actionable conclusions include prioritizing ChatGPT-5.4 for tasks requiring low latency and high reliability, given its consistent performance. Claude-Sonnet and DeepSeek providers should be monitored closely for latency spikes, and their use should be limited to non-time-sensitive tasks. MiMo-V2.5-Pro (Orbit) requires further investigation to address its high error rate and improve reliability. Additionally, the stability of the network ISP confirms that the observed issues are provider-specific, not network-related.</p><p>**Executive Summary:** Over the last 24 hours, LLM providers exhibited varying levels of reliability and latency, with ChatGPT-5.4 emerging as the most stable performer. Claude-Sonnet and DeepSeek providers experienced frequent latency spikes and intermittent failures, while MiMo-V2.5-Pro (Orbit) had the highest error rate. The network ISP remained stable, confirming that provider-specific issues were the primary cause of observed instability. Recommendations include prioritizing ChatGPT-5.4 for critical tasks, closely monitoring Claude-Sonnet and DeepSeek for latency, and investigating MiMo-V2.5-Pro (Orbit) to address its reliability concerns.</p></div>
+
+<script>
+const labels = ["20:10", "20:15", "20:20", "20:25", "20:30", "20:35", "20:50", "20:55", "21:00", "21:05", "21:10", "21:15", "21:20", "21:25", "21:30", "21:35", "21:40", "21:45", "21:50", "21:55", "22:00", "22:05", "22:10", "22:15", "22:20", "22:25", "22:30", "22:35", "22:40", "22:45", "22:50", "22:55", "23:00", "23:05", "23:10", "23:15", "23:20", "23:25", "23:30", "23:35", "23:40", "23:45", "23:50", "23:55", "00:00", "00:05", "00:10", "00:15", "00:20", "00:25", "00:30", "00:35", "00:40", "00:45", "00:50", "00:55", "01:00", "01:05", "01:10", "01:15", "01:20", "01:25", "01:30", "01:35", "01:40", "01:45", "01:50", "02:00", "02:10", "02:20", "02:30", "02:40", "02:50", "03:00", "03:10", "03:20", "03:30", "03:40", "03:50", "04:00", "04:10", "04:20", "04:30", "04:40", "04:50", "05:00", "05:10", "05:20", "05:30", "05:40", "05:50", "06:00", "06:10", "06:20", "06:30", "06:40", "06:50", "07:00", "07:10", "07:20", "07:30", "07:40", "07:50", "08:00", "08:10", "08:20", "08:30", "08:40", "08:45", "08:50", "08:55", "09:00", "09:05", "09:10", "09:15", "09:20", "09:25", "09:30", "09:35", "09:40", "09:45", "09:50", "09:55", "10:00", "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45", "11:50", "11:55"];
+const gridColor = 'rgba(42,90,58,0.4)';
+const axisColor = '#8fbc8f';
+const baseOpts = (yLabel, max) => ({
+  responsive: true,
+  plugins: { legend: { labels: { color: axisColor, font: { family: 'Courier New' } } } },
+  scales: {
+    x: { ticks: { color: axisColor, maxTicksLimit: 12 }, grid: { color: gridColor } },
+    y: { ticks: { color: axisColor }, grid: { color: gridColor }, title: { display: true, text: yLabel, color: axisColor }, min: 0, ...(max ? {suggestedMax: max} : {}) },
+  }
+});
+new Chart(document.getElementById('latencyChart'), {
+  type: 'line',
+  data: { labels, datasets: [{"label": "claude-sonnet-4-6", "data": [null, null, 2148, 2134, 2002, 2497, 2306, 5357, 4509, 2538, 3828, 2324, 5894, 2979, 2863, 2373, 2526, 4823, 3601, 4559, 8235, 11013, 2657, 2537, 2196, 3487, 2371, 2510, 3171, 6777, 4861, 2836, 2582, 3013, 2672, 2949, 2740, 2762, 7522, 2450, 2456, 2520, 2410, 2723, 3400, 2592, 4591, 4770, 2502, 2643, 2424, 2724, 2738, 2592, 2223, 2533, 2673, 2902, 2831, 2623, 2389, 2318, 2666, 2421, 2390, 2641, 4986, 3545, 2050, 2590, 2622, 3162, 2148, 3761, 2158, 2078, 2075, 3127, 2422, 4259, 2708, 2541, 4279, 4102, 2554, 3174, 2411, 3053, 2083, 3837, 2659, 3858, 3029, 2124, 2039, 1905, 2416, 2273, 2509, 2307, 2851, 11110, 2898, 2327, 3240, 5989, 2371, null, 2384, null, 1725, null, 2788, null, 2379, null, 2518, null, 1980, null, null, null, 3931, null, 2775, null, 3227, null, 4981, null, 1822, null, 3157, null, 2831, null, 2765, null, 2056, null, 2595, null, 3065, null, 3252, null, 2150], "borderColor": "rgba(0,230,118,1)", "backgroundColor": "rgba(0,230,118,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "ChatGPT-5.4", "data": [1640, 1446, 1324, 1099, 941, 1056, 924, 857, 1015, 800, 1136, 884, 678, 935, 908, 1104, 1550, 1607, 861, 735, 899, 1132, 1122, 1293, 868, 1461, 942, 1377, 1468, 1461, 1133, 1252, 1125, 1493, 948, 1271, 1151, 1386, 1350, 1111, 1335, 1425, 1427, 1299, 1518, 1458, 1228, 1333, 1233, 1516, 1134, 1603, 1181, 1106, 897, 1354, 2064, 1394, 1361, 2071, 1140, 1101, 1628, 891, 1222, 1129, null, 1088, 957, 1147, 1579, 1692, 1200, 1292, 1513, 1386, 1568, 1249, 1358, 1344, 2746, 1289, 1150, 1523, 1461, 1570, 1542, 1604, 1602, 1213, 1447, 1556, 1106, 1383, 1650, 1575, 1484, 1994, 1423, 1499, 1512, 1775, 1548, 1628, 1383, 1890, 1466, 2023, null, 1218, null, 1467, null, 2652, null, 1612, null, 1175, null, 1295, null, 1507, null, 1775, null, 1688, null, 1305, null, 1575, null, 1675, null, 1362, null, 1584, null, 1837, null, 1678, null, 1202, null, 1736, null, 2242, null], "borderColor": "rgba(100,181,246,1)", "backgroundColor": "rgba(100,181,246,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "DeepSeek-V4-Flash", "data": [null, 2440, 4118, 4269, 3504, 3308, 3945, 4891, 3524, 3362, 5478, 6210, 6607, 7917, 7064, 6215, 9075, 3274, 6734, 6645, 6755, 14684, 15013, 3813, 1963, 1220, 5238, 2166, 2620, 2148, 3233, 2257, 2299, 2342, 2893, 3323, 2341, 4485, 2803, 3006, 2395, 2580, 2581, 2318, 2148, 3359, 2014, 2913, 2411, 2070, 2504, 1644, 1846, 2058, 1723, 2412, 2696, 2792, 3391, 3861, 2013, 3612, 7316, 2019, 3409, 3150, 1651, 2719, 2397, 1368, 2801, 2748, 1622, 2736, 2782, 2080, 6477, 3948, 1215, 3875, 3103, 2353, 1809, 3134, 1734, 1536, 3838, 1414, 4737, 3440, 2861, 1800, 1579, 2901, 1944, 2503, 6701, 1964, 1895, 1585, 5715, 1690, 1641, 1671, 6201, 1379, 1512, 1762, null, 2039, null, 1752, null, 1745, null, 1476, null, null, 4898, null, 1959, null, 1972, null, 1351, null, 2356, null, 2507, null, 1694, null, 3142, null, 2055, null, 1713, null, 1610, null, 2318, null, 1829, null, 1544, null, 1873], "borderColor": "rgba(255,234,0,1)", "backgroundColor": "rgba(255,234,0,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "MiMo-V2.5-Pro (Orbit)", "data": [null, 5029, 2357, 3716, 2501, 3857, 2666, 3657, 3882, 3165, 3665, 2862, 3536, 3974, 4762, 2549, 3958, 3274, 3058, 2952, 3472, 4431, 2567, 3239, 1962, 2814, 2161, 1966, 2313, 2577, 2380, 2542, 2261, 2815, 2450, 2698, 2598, 1930, 3364, 2168, 2762, 2911, 2626, 2534, 2066, 2820, 2486, 2839, 2836, 2300, 2933, 3316, 2040, 2661, 1852, 3137, 2308, 2293, 2229, 2101, 2708, 2882, 2257, 2768, 2543, 2404, 3329, 2107, 2394, 1976, 2023, 2737, 2642, 1927, 4393, 3505, 3575, 5587, 1822, 3862, 2092, 4796, 2940, 2062, 6859, 1766, 2425, 2225, 3325, 3243, 2460, 2232, 4465, 2519, 2250, 4270, 6734, 3737, 2127, 2959, 1847, 2721, 2705, 2736, 2834, 4555, 3187, null, 4015, null, 5723, null, 2388, null, 4006, null, 5201, null, null, null, null, null, 4161, null, 2790, null, 5680, null, 2036, null, 2426, null, 3179, null, 1918, null, 2138, null, 2129, null, 3615, null, 2066, null, 2417, null, 2975], "borderColor": "rgba(255,87,34,1)", "backgroundColor": "rgba(255,87,34,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "claude-sonnet-4-5", "data": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1802, 1777, 1952, 1992, 2000, 1727, 1764, 1995, 2011, 1927, 1840, 1756, 1682, 1765, 1915, 2006, 2155, 1909, 1979, 1965, 2333, 1885, 1723, 2373, 2151, 2009, 2224, 1825, 2298, 2305, 1797, 1985, 1908, 1806, 1692, 2353, 1843, 1827, 1902, 1813, 2145, 2119, 2074, 1990, 1885, 1797, 1981, 2444, 2307, 2130, 1817, 2046, 1698, 1984, 1982, 2201, 1913, 2032, 1714, 1720, 2055, 1679, 1894, 2831, 1816, 2045, 2739, 1781, 2407, 1703, 2030, 1976, 6511, 2262, 2179, 2414, 2297, 2168, 2263, 2138, 1647, 2167, 1412, 1871, 1762, 2382, 2254, 2321, 2267, 2260, 2460, 2111, 2465, null, 2203, null, 2124, null, 1898, null, 1457, null, 2432, null, 1818, null, 2162, null, 1671, null, 1705, null, 1778, null, 1920, null, 1886, null, null, 1839, null, 1704, null, 2029, null, 2055, null, 2651, null, 2115, null, 1777], "borderColor": "rgba(206,147,216,1)", "backgroundColor": "rgba(206,147,216,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "NETWORK \u2192 ISP", "data": [null, null, null, null, null, null, null, null, null, null, null, null, 85, 162, 104, 133, 228, 227, 165, 119, 139, 298, 167, 254, 117, 291, 125, 190, 235, 288, 139, 204, 110, 131, 205, 250, 237, 145, 154, 234, 228, 181, 259, 125, 248, 188, 197, 179, 231, 17, 138, 277, 364, 239, 156, 213, 56, 356, 39, 176, 298, 358, 350, 155, 220, 93, 297, 71, 145, 308, 362, 71, 163, 32, 243, 170, 18, 407, 111, 86, 70, 28, 75, 81, 200, 96, 65, 216, 103, 325, 145, 269, 17, 26, 363, 181, 255, 272, 293, 311, 85, 355, 39, 229, 100, 66, 82, 22, null, 300, null, 200, null, 294, null, 78, null, 86, null, 253, null, 216, null, 285, null, 98, null, 62, null, 146, null, 384, null, 17, null, 266, null, 73, null, 331, null, 109, null, 186, null, 101, null], "borderColor": "rgba(255,183,77,1)", "backgroundColor": "rgba(255,183,77,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}] },
+  options: baseOpts('ms', null),
+});
+new Chart(document.getElementById('successChart'), {
+  type: 'line',
+  data: { labels, datasets: [{"label": "claude-sonnet-4-6", "data": [0.0, 0.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 83.3, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 83.3, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 80.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 0.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0], "borderColor": "rgba(0,230,118,1)", "backgroundColor": "rgba(0,230,118,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "ChatGPT-5.4", "data": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null], "borderColor": "rgba(100,181,246,1)", "backgroundColor": "rgba(100,181,246,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "DeepSeek-V4-Flash", "data": [0.0, 50.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0], "borderColor": "rgba(255,234,0,1)", "backgroundColor": "rgba(255,234,0,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "MiMo-V2.5-Pro (Orbit)", "data": [0.0, 50.0, 100.0, 100.0, 72.7, 50.0, 95.5, 87.5, 92.3, 100.0, 94.1, 80.0, 100.0, 88.9, 81.8, 100.0, 90.9, 100.0, 83.3, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 87.5, 85.7, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 87.5, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 88.9, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 0.0, null, 0.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0], "borderColor": "rgba(255,87,34,1)", "backgroundColor": "rgba(255,87,34,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "claude-sonnet-4-5", "data": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0.0, 62.5, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 42.9, 50.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0], "borderColor": "rgba(206,147,216,1)", "backgroundColor": "rgba(206,147,216,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "NETWORK \u2192 ISP", "data": [null, null, null, null, null, null, null, null, null, null, null, null, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null], "borderColor": "rgba(255,183,77,1)", "backgroundColor": "rgba(255,183,77,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}] },
+  options: baseOpts('%', 100),
+});
+</script>
+</body></html>
