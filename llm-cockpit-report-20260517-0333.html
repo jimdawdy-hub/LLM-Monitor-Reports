@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LLM Cockpit — Session Report 2026-05-17 03:32:10</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  body { font-family: 'Courier New', monospace; background: #050a08; color: #e8f5e8; margin: 0; padding: 32px; }
+  h1   { color: #00e676; letter-spacing: 4px; font-size: 18px; margin-bottom: 4px; }
+  h2   { color: #8fbc8f; letter-spacing: 3px; font-size: 13px; border-bottom: 1px solid #2a5a3a; padding-bottom: 6px; margin-top: 40px; }
+  .meta { color: #8fbc8f; font-size: 12px; margin-bottom: 32px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; }
+  th    { color: #8fbc8f; text-align: left; padding: 6px 12px; border-bottom: 1px solid #2a5a3a; letter-spacing: 1px; }
+  td    { padding: 6px 12px; border-bottom: 1px solid #111; }
+  .chart-wrap { background: #0d1410; border: 1px solid #2a5a3a; padding: 20px; margin-bottom: 24px; }
+  .ai  { background: #0d1410; border: 1px solid #2a5a3a; padding: 24px; line-height: 1.8; }
+  .ai p { margin-bottom: 16px; color: #e8f5e8; }
+  .ai p:last-child { color: #00e676; font-weight: bold; border-top: 1px solid #2a5a3a; padding-top: 16px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h1>✈ LLM COCKPIT MONITOR — SESSION REPORT</h1>
+<div class="meta">Generated: 2026-05-17 03:32:10 &nbsp;|&nbsp; Window: last 24h (from 2026-05-16 03:32) &nbsp;|&nbsp; Analysis: DeepSeek via OpenRouter</div>
+
+<h2>PROVIDER SUMMARY</h2>
+<table>
+  <tr><th>PROVIDER</th><th>STATUS</th><th>PROBES</th><th>SUCCESS</th><th>AVG</th><th>P75</th><th>P95</th><th>MAX</th><th>ERRORS</th></tr>
+  
+        <tr>
+          <td>claude-sonnet-4-6</td>
+          <td style="color:#9e9e9e;font-weight:bold">GREY</td>
+          <td>69</td>
+          <td>100.0%</td>
+          <td>2041ms</td>
+          <td>1786ms</td>
+          <td>2893ms</td>
+          <td>13902ms</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>ChatGPT-5.4</td>
+          <td style="color:#9e9e9e;font-weight:bold">GREY</td>
+          <td>74</td>
+          <td>100.0%</td>
+          <td>877ms</td>
+          <td>936ms</td>
+          <td>1373ms</td>
+          <td>2133ms</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>DeepSeek-V4-Flash</td>
+          <td style="color:#9e9e9e;font-weight:bold">GREY</td>
+          <td>66</td>
+          <td>100.0%</td>
+          <td>2552ms</td>
+          <td>3110ms</td>
+          <td>4766ms</td>
+          <td>9768ms</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>MiMo-V2.5-Pro (Orbit)</td>
+          <td style="color:#9e9e9e;font-weight:bold">GREY</td>
+          <td>70</td>
+          <td>95.7%</td>
+          <td>2693ms</td>
+          <td>3153ms</td>
+          <td>5462ms</td>
+          <td>8098ms</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>claude-sonnet-4-5</td>
+          <td style="color:#9e9e9e;font-weight:bold">GREY</td>
+          <td>69</td>
+          <td>100.0%</td>
+          <td>1957ms</td>
+          <td>2142ms</td>
+          <td>2695ms</td>
+          <td>10307ms</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>NETWORK → ISP</td>
+          <td style="color:#9e9e9e;font-weight:bold">GREY</td>
+          <td>75</td>
+          <td>100.0%</td>
+          <td>22ms</td>
+          <td>21ms</td>
+          <td>23ms</td>
+          <td>213ms</td>
+          <td>0</td>
+        </tr>
+</table>
+
+<h2>LATENCY OVER TIME (avg ms per 5-min bin)</h2>
+<div class="chart-wrap"><canvas id="latencyChart" height="80"></canvas></div>
+
+<h2>SUCCESS RATE OVER TIME (%)</h2>
+<div class="chart-wrap"><canvas id="successChart" height="80"></canvas></div>
+
+<h2>AI ANALYSIS — DEEPSEEK</h2>
+<div class="ai"><p>The overall session health across the monitored LLM providers was stable, with most providers maintaining a 100% success rate on probes and no errors reported. However, latency metrics varied significantly between providers, indicating differences in performance and responsiveness. The network path itself remained highly reliable, with minimal latency (average 22ms) and no errors, confirming that network conditions were not a limiting factor for the LLM providers.</p><p>Claude-Sonnet-4-6 and Claude-Sonnet-4-5 demonstrated consistent reliability, with 100% success rates and moderate latency averages (2041ms and 1957ms, respectively). Both versions of Claude-Sonnet exhibited occasional spikes in maximum latency (up to 13902ms and 10307ms), but these outliers did not impact overall performance. ChatGPT-5.4 stood out as the fastest provider, with an average latency of 877ms and a maximum of 2133ms, making it the most responsive option. DeepSeek-V4-Flash, while reliable, had the highest average latency (2552ms) and a maximum latency nearing 10 seconds, suggesting potential inefficiencies in processing or resource allocation. MiMo-V2.5-Pro (Orbit) was the only provider with a success rate below 100% (95.7%) and three errors, alongside high latency metrics (average 2693ms, maximum 8098ms), indicating intermittent reliability issues.</p><p>Several patterns and incidents emerged during the monitoring window. Claude-Direct experienced repeated status changes between GREEN, YELLOW, and RED due to elevated latency, with spikes reaching 4.7x baseline. Similarly, DeepSeek-R2 and Xiaomi-Orbit showed frequent fluctuations, particularly around midnight, with Xiaomi-Orbit reaching RED status multiple times due to high latency (up to 3.8x baseline). These incidents suggest intermittent performance degradation, possibly due to resource contention or backend inefficiencies.</p><p>Comparing providers using the same network path, ChatGPT-5.4 outperformed others in terms of latency and consistency, while DeepSeek-V4-Flash and MiMo-V2.5-Pro lagged behind. Claude-Sonnet versions offered a middle ground, balancing reliability with moderate latency. The network path itself was not a bottleneck, as evidenced by the ISP’s low latency and 100% success rate.</p><p>Actionable conclusions include prioritizing ChatGPT-5.4 for latency-sensitive applications due to its superior responsiveness. Claude-Sonnet versions remain reliable for general use, though their occasional latency spikes warrant monitoring. DeepSeek-V4-Flash and MiMo-V2.5-Pro require optimization to reduce latency and improve reliability, particularly MiMo-V2.5-Pro, which had the highest error count. Incident patterns suggest the need for deeper investigation into resource allocation and backend processes for providers experiencing frequent status changes.</p><p>**Executive Summary:** The monitoring session revealed stable overall health across LLM providers, with ChatGPT-5.4 emerging as the fastest and most reliable option. Claude-Sonnet versions performed consistently, while DeepSeek-V4-Flash and MiMo-V2.5-Pro showed higher latency and occasional reliability issues. Frequent status changes for some providers indicate intermittent performance degradation, warranting further investigation. Recommendations include prioritizing ChatGPT-5.4 for latency-sensitive tasks, optimizing DeepSeek and MiMo for better performance, and monitoring Claude-Sonnet for latency spikes.</p></div>
+
+<script>
+const labels = ["18:15", "18:20", "18:25", "18:30", "18:35", "18:40", "18:45", "18:55", "19:05", "19:15", "19:25", "19:35", "19:45", "19:55", "20:05", "20:15", "20:25", "20:35", "20:45", "20:55", "21:00", "21:05", "21:10", "21:15", "21:20", "21:25", "21:30", "21:35", "21:40", "21:45", "21:50", "21:55", "22:00", "22:05", "22:10", "22:15", "22:20", "22:25", "22:30", "22:35", "22:40", "22:45", "22:50", "22:55", "23:00", "23:05", "23:10", "23:15", "23:20", "23:25", "23:30", "23:35", "23:40", "23:45", "23:50", "23:55", "00:00", "00:05", "00:10", "00:15", "00:20", "00:25", "00:30", "00:35", "00:40", "00:45", "00:50", "00:55", "01:00", "01:05", "01:10", "01:15", "01:20", "01:25", "01:30", "01:35", "01:40", "01:45", "01:50", "01:55", "02:00", "02:05", "02:10", "02:15", "02:20", "02:25", "02:30", "02:35", "02:40", "02:45", "02:50", "02:55", "03:00", "03:05", "03:10"];
+const gridColor = 'rgba(42,90,58,0.4)';
+const axisColor = '#8fbc8f';
+const baseOpts = (yLabel, max) => ({
+  responsive: true,
+  plugins: { legend: { labels: { color: axisColor, font: { family: 'Courier New' } } } },
+  scales: {
+    x: { ticks: { color: axisColor, maxTicksLimit: 12 }, grid: { color: gridColor } },
+    y: { ticks: { color: axisColor }, grid: { color: gridColor }, title: { display: true, text: yLabel, color: axisColor }, min: 0, ...(max ? {suggestedMax: max} : {}) },
+  }
+});
+new Chart(document.getElementById('latencyChart'), {
+  type: 'line',
+  data: { labels, datasets: [{"label": "claude-sonnet-4-6", "data": [1763, 1617, 2201, 1750, 2123, 1615, 1626, 1732, 1671, 13902, 10339, 1532, 1687, 1686, 1554, 2022, 1690, 1764, 1828, null, 1570, null, 1812, null, 2893, null, 1669, null, 1661, null, 1585, null, 1789, null, 1480, null, 1832, null, 1513, null, 1748, null, 1583, null, 1522, null, 1618, null, 1730, null, 2868, null, 1637, null, 1538, null, 1797, null, 1532, null, 1559, null, 1773, null, 1573, null, 1410, null, 1742, null, 1592, null, 1628, null, 1597, null, 1689, null, 1597, null, 1610, null, 1611, null, 1657, null, 1545, null, 1581, null, 1717, null, 2505, null, 1546], "borderColor": "rgba(0,230,118,1)", "backgroundColor": "rgba(0,230,118,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "ChatGPT-5.4", "data": [771, 671, 1039, 749, 833, 679, 676, 853, 764, 763, 1066, 785, 816, 818, 772, 969, 875, 908, 748, 867, null, 1067, null, 939, null, 733, null, 888, null, 913, null, 840, null, 840, null, 766, null, 739, null, 2133, null, 914, null, 1098, null, 831, null, 680, null, 739, null, 779, null, 790, null, 824, null, 1183, null, 911, null, null, 947, null, 760, null, 1009, null, 1198, null, 802, null, 938, null, 799, null, 944, null, 839, null, 832, null, 1160, null, 858, null, 946, null, 814, null, 2004, null, 823, null, 936], "borderColor": "rgba(100,181,246,1)", "backgroundColor": "rgba(100,181,246,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "DeepSeek-V4-Flash", "data": [3561, 3658, 4352, 3946, 2732, 2625, 1934, 4848, 1502, 1574, 2608, 1376, 1238, 1139, 1739, 1296, 1432, 1853, 1943, 1241, null, 1478, null, 1291, null, 2205, null, 1529, null, 1300, null, 1468, null, 1329, null, 2219, null, null, 3273, null, 1619, null, 1759, null, 9768, null, 4766, null, 3809, null, 3024, null, 2523, null, 4358, null, 1516, null, 1318, null, 1916, null, 2986, null, 1732, null, 1589, null, 2130, null, 2881, null, 1872, null, 1907, null, 2201, null, 2284, null, 2112, null, 3697, null, 1812, null, 1689, null, 1651, null, 1753, null, 2715, null, 2099], "borderColor": "rgba(255,234,0,1)", "backgroundColor": "rgba(255,234,0,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "MiMo-V2.5-Pro (Orbit)", "data": [1557, 1307, 6314, 1655, 1153, 2617, 1161, 2134, 1858, 1879, 1709, 2076, 2742, 1273, 1452, 2300, 1336, 1924, 2112, 3706, null, 1907, null, 1777, null, 2051, null, 3049, null, null, 3880, null, 1932, null, 3140, null, 1849, null, 3237, null, 2516, null, 1335, null, 2275, null, 7765, null, 1754, null, 1499, null, 2378, null, 2428, null, 3901, null, 2700, null, 2346, null, 5433, null, null, null, 2618, null, 3097, null, 5317, null, 7030, null, 4439, null, 3153, null, null, null, 5462, null, 4918, null, 2505, null, 3758, null, 4408, null, 1379, null, null, null, 4806], "borderColor": "rgba(255,87,34,1)", "backgroundColor": "rgba(255,87,34,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "claude-sonnet-4-5", "data": [1733, 1340, 2321, 1653, 1481, 1416, 1761, 2145, 1447, 1681, 2602, 2348, 1920, 1418, 2142, 2370, 1400, 1629, 1839, 2679, null, 1720, null, 1786, null, 2411, null, 2495, null, 2534, null, 2020, null, null, 1522, null, 1572, null, 1817, null, 1440, null, 1901, null, 1665, null, 2187, null, 1617, null, 10307, null, 1488, null, 2122, null, 1520, null, 1845, null, 1536, null, 1456, null, 2273, null, 3192, null, 2506, null, 1419, null, 2423, null, 1390, null, 1638, null, 1408, null, 1508, null, 1406, null, 1854, null, 1469, null, 1409, null, 1633, null, 1562, null, 2695], "borderColor": "rgba(206,147,216,1)", "backgroundColor": "rgba(206,147,216,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}, {"label": "NETWORK \u2192 ISP", "data": [20, 19, 116, 19, 20, 19, 19, 20, 19, 20, 20, 19, 23, 21, 19, 21, 19, 19, 21, 22, null, 20, null, 22, null, 19, null, 19, null, 20, null, 20, null, 19, null, 20, null, 18, null, 20, null, 19, null, 20, null, 23, null, 21, null, 21, null, 21, null, 20, null, 19, null, 20, null, 23, null, 21, null, 20, null, 18, null, 19, null, 24, null, 19, null, 18, null, 23, null, 19, null, 19, null, 19, null, 20, null, 19, null, 20, null, 21, null, 19, null, 19, null], "borderColor": "rgba(255,183,77,1)", "backgroundColor": "rgba(255,183,77,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2}] },
+  options: baseOpts('ms', null),
+});
+new Chart(document.getElementById('successChart'), {
+  type: 'line',
+  data: { labels, datasets: [{"label": "claude-sonnet-4-6", "data": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0], "borderColor": "rgba(0,230,118,1)", "backgroundColor": "rgba(0,230,118,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "ChatGPT-5.4", "data": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0], "borderColor": "rgba(100,181,246,1)", "backgroundColor": "rgba(100,181,246,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "DeepSeek-V4-Flash", "data": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0], "borderColor": "rgba(255,234,0,1)", "backgroundColor": "rgba(255,234,0,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "MiMo-V2.5-Pro (Orbit)", "data": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 0.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 0.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 0.0, null, 100.0], "borderColor": "rgba(255,87,34,1)", "backgroundColor": "rgba(255,87,34,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "claude-sonnet-4-5", "data": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0], "borderColor": "rgba(206,147,216,1)", "backgroundColor": "rgba(206,147,216,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}, {"label": "NETWORK \u2192 ISP", "data": [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null, 100.0, null], "borderColor": "rgba(255,183,77,1)", "backgroundColor": "rgba(255,183,77,0.15)", "tension": 0.3, "spanGaps": true, "pointRadius": 2, "fill": false}] },
+  options: baseOpts('%', 100),
+});
+</script>
+</body></html>
